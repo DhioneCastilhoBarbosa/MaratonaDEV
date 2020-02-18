@@ -2,6 +2,14 @@
 const express = require("express")
 const server = express()
 
+// TESTE DE ARQUIVO .ENV
+
+require('dotenv/config')
+const user= (process.env.DB_NAME)
+const pass= (process.env.DB_PASS)
+const host= (process.env.DB_HOST)
+const port= (process.env.DB_PORTA)
+const data= (process.env.DB_DATABASE)
 // configurar servidor para apresentar arquivos estaticos
 server.use(express.static('public'))
 
@@ -11,11 +19,11 @@ server.use(express.urlencoded({extended:true}))
 // configurar a conexao com banco de dados 
 const Pool= require('pg').Pool
 const db= new Pool({
-    user:'postgres',
-    password:'vmx300',
-    host:'localhost',
-    port:5432,
-    database:'doe'
+    user:user,
+    password:pass,
+    host:host,
+    port:port,
+    database: data
 
 })
 // configurando a template engine 
