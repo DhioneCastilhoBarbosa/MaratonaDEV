@@ -17,4 +17,25 @@ Ao desenvolver esta aplicação foi possivel aumentar o aprendizado de programa�
 - [x] Postgres
 - [x] Postbird
 
+## **Observação**
+
+Para executar a aplicação é necessario instalar banco de dados postgres ou equivalente e criar banco de dados com nome, email e tipo sanguineo, realizar a configuração de conexão do banco para realizar pesquisa e cadatros pela aplicação.
+
+### Configura conexão:
+
+```
+
+const Pool= require('pg').Pool
+const db= new Pool({
+    user:'Usuario',
+    password:'Senha',
+    host:'localhost',
+    port:5432,
+    database:'doe'
+
+})
+```
+
+
+
 
